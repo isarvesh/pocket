@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
 
 function MenuIcon(props) {
@@ -51,9 +50,15 @@ export function Header() {
       <nav>
         <Container className="relative z-50 flex justify-between py-8">
           <div className="relative z-10 flex items-center gap-16">
-            <Link href="/" aria-label="Home">
-              <Logo className="h-10 w-auto" />
-            </Link>
+            <img
+              width="70"
+              height="38"
+              src="https://cdn-fccog.nitrocdn.com/dYpGiMcFJGJjtrIWsQrGqFSIVpbzqukK/assets/images/optimized/rev-0bf76a7/www.measured.com/logos/measured-sm.png"
+              className="lazyloaded"
+              decoding="async"
+              nitro-lazy-empty=""
+              id="Njo0Mzg1NQ==-1"
+            />
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />
             </div>
@@ -110,7 +115,7 @@ export function Header() {
                             <MobileNavLink href="#faqs">FAQs</MobileNavLink>
                           </div>
                           <div className="mt-8 flex flex-col gap-4">
-                            <Button href="/login" variant="outline">
+                            <Button href="#" variant="outline">
                               Log in
                             </Button>
                             <Button href="#">Download the app</Button>
@@ -122,7 +127,7 @@ export function Header() {
                 </>
               )}
             </Popover>
-            <Button href="/login" variant="outline" className="hidden lg:block">
+            <Button href="#" variant="outline" className="hidden lg:block">
               Log in
             </Button>
             <Button href="#" className="hidden lg:block">
