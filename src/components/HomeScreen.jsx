@@ -39,7 +39,7 @@ function UserIcon(props) {
   )
 }
 
-export function AppScreen({ children, className, ...props }) {
+export function HomeScreen({ children, className, ...props }) {
   return (
     <div className={clsx('flex flex-col', className)} {...props}>
       <div className="flex justify-between px-4 pt-4">
@@ -52,7 +52,7 @@ export function AppScreen({ children, className, ...props }) {
   )
 }
 
-AppScreen.Header = forwardRef(function AppScreenHeader({ children }, ref) {
+HomeScreen.Header = forwardRef(function HomeScreenHeader({ children }, ref) {
   return (
     <div ref={ref} className="mt-6 px-4 text-white">
       {children}
@@ -60,7 +60,7 @@ AppScreen.Header = forwardRef(function AppScreenHeader({ children }, ref) {
   )
 })
 
-AppScreen.Title = forwardRef(function AppScreenTitle({ children }, ref) {
+HomeScreen.Title = forwardRef(function HomeScreenTitle({ children }, ref) {
   return (
     <div ref={ref} className="text-2xl text-white">
       {children}
@@ -68,7 +68,10 @@ AppScreen.Title = forwardRef(function AppScreenTitle({ children }, ref) {
   )
 })
 
-AppScreen.Subtitle = forwardRef(function AppScreenSubtitle({ children }, ref) {
+HomeScreen.Subtitle = forwardRef(function HomeScreenSubtitle(
+  { children },
+  ref
+) {
   return (
     <div ref={ref} className="text-sm text-gray-500">
       {children}
@@ -76,7 +79,7 @@ AppScreen.Subtitle = forwardRef(function AppScreenSubtitle({ children }, ref) {
   )
 })
 
-AppScreen.Body = forwardRef(function AppScreenBody(
+HomeScreen.Body = forwardRef(function HomeScreenBody(
   { children, className },
   ref
 ) {

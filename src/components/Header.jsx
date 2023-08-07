@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import { Popover } from '@headlessui/react'
-import { AnimatePresence, motion } from 'framer-motion'
+import Link from "next/link";
+import { Popover } from "@headlessui/react";
+import { AnimatePresence, motion } from "framer-motion";
 
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { NavLinks } from '@/components/NavLinks'
+import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { NavLinks } from "@/components/NavLinks";
 
 function MenuIcon(props) {
   return (
@@ -16,7 +16,7 @@ function MenuIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 function ChevronUpIcon(props) {
@@ -29,7 +29,7 @@ function ChevronUpIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 function MobileNavLink({ children, ...props }) {
@@ -41,7 +41,7 @@ function MobileNavLink({ children, ...props }) {
     >
       {children}
     </Popover.Button>
-  )
+  );
 }
 
 export function Header() {
@@ -137,5 +137,5 @@ export function Header() {
         </Container>
       </nav>
     </header>
-  )
+  );
 }

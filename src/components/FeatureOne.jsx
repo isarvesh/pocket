@@ -4,13 +4,13 @@ import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useDebouncedCallback } from 'use-debounce'
 
-import { AppScreen } from '@/components/AppScreen'
+import { HomeScreen } from '@/components/HomeScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
-import { PhoneFrame } from '@/components/PhoneFrame'
+import { PhoneModel } from '@/components/PhoneModel'
 
-const MotionAppScreenHeader = motion(AppScreen.Header)
-const MotionAppScreenBody = motion(AppScreen.Body)
+const MotionHomeScreenHeader = motion(HomeScreen.Header)
+const MotionHomeScreenBody = motion(HomeScreen.Body)
 
 const features = [
   {
@@ -159,15 +159,15 @@ const bodyAnimation = {
 
 function InviteScreen({ custom, animated = false }) {
   return (
-    <AppScreen className="w-full">
-      <MotionAppScreenHeader {...(animated ? headerAnimation : {})}>
-        <AppScreen.Title>Invite people</AppScreen.Title>
-        <AppScreen.Subtitle>
+    <HomeScreen className="w-full">
+      <MotionHomeScreenHeader {...(animated ? headerAnimation : {})}>
+        <HomeScreen.Title>Invite people</HomeScreen.Title>
+        <HomeScreen.Subtitle>
           Get tips <span className="text-white">5s sooner</span> for every
           invite.
-        </AppScreen.Subtitle>
-      </MotionAppScreenHeader>
-      <MotionAppScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
+        </HomeScreen.Subtitle>
+      </MotionHomeScreenHeader>
+      <MotionHomeScreenBody {...(animated ? { ...bodyAnimation, custom } : {})}>
         <div className="px-4 py-6">
           <div className="space-y-6">
             {[
@@ -186,8 +186,8 @@ function InviteScreen({ custom, animated = false }) {
             Invite person
           </div>
         </div>
-      </MotionAppScreenBody>
-    </AppScreen>
+      </MotionHomeScreenBody>
+    </HomeScreen>
   )
 }
 
@@ -256,7 +256,7 @@ function FeaturesDesktop() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <CircleBackground color="#13B5C8" />
         </div>
-        <PhoneFrame className="z-10 mx-auto w-full max-w-[366px]">
+        <PhoneModel className="z-10 mx-auto w-full max-w-[366px]">
           <Tab.Panels as={Fragment}>
             <AnimatePresence
               initial={false}
@@ -278,7 +278,7 @@ function FeaturesDesktop() {
               )}
             </AnimatePresence>
           </Tab.Panels>
-        </PhoneFrame>
+        </PhoneModel>
       </div>
     </Tab.Group>
   )
@@ -335,9 +335,9 @@ function FeaturesMobile() {
                   className={featureIndex % 2 === 1 ? 'rotate-180' : undefined}
                 />
               </div>
-              <PhoneFrame className="relative mx-auto w-full max-w-[366px]">
+              <PhoneModel className="relative mx-auto w-full max-w-[366px]">
                 <feature.screen />
-              </PhoneFrame>
+              </PhoneModel>
               <div className="absolute inset-x-0 bottom-0 bg-gray-800/95 p-6 backdrop-blur sm:p-10">
                 <feature.icon className="h-8 w-8" />
                 <h3 className="mt-6 text-sm font-semibold text-white sm:text-lg">
@@ -376,7 +376,7 @@ function FeaturesMobile() {
   )
 }
 
-export function PrimaryFeatures() {
+export function FeatureOne() {
   return (
     <section
       id="features"

@@ -17,7 +17,7 @@ function PlaceholderFrame(props) {
   )
 }
 
-export function PhoneFrame({
+export function PhoneModel({
   className,
   children,
   priority = false,

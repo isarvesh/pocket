@@ -1,8 +1,8 @@
-import { AppStoreLink } from '@/components/AppStoreLink'
+import { AppStore } from '@/components/AppStore'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
 
-export function CallToAction() {
+export function ActionBanner() {
   return (
     <section
       id="get-free-shares-today"
@@ -22,7 +22,7 @@ export function CallToAction() {
             first investment.
           </p>
           <div className="mt-8 flex justify-center">
-            <AppStoreLink color="white" />
+            <AppStore color="white" />
           </div>
         </div>
       </Container>

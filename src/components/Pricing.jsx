@@ -15,7 +15,7 @@ const plans = [
       'You’re new to investing but want to do it right. Get started for free.',
     button: {
       label: 'Get started for free',
-      href: '/register',
+      href: '#',
     },
     features: [
       'Commission-free trading',
@@ -28,12 +28,12 @@ const plans = [
   {
     name: 'Investor',
     featured: false,
-    price: { Monthly: '$7', Annually: '$70' },
+    price: { Monthly: '$7', Annually: '$7' },
     description:
       'You’ve been investing for a while. Invest more and grow your wealth faster.',
     button: {
       label: 'Subscribe',
-      href: '/register',
+      href: '#',
     },
     features: [
       'Commission-free trading',
@@ -47,12 +47,12 @@ const plans = [
   {
     name: 'VIP',
     featured: true,
-    price: { Monthly: '$199', Annually: '$1,990' },
+    price: { Monthly: '$199', Annually: '$199' },
     description:
       'You’ve got a huge amount of assets but it’s not enough. To the moon.',
     button: {
       label: 'Subscribe',
-      href: '/register',
+      href: '#',
     },
     features: [
       'Commission-free trading',
@@ -94,8 +94,8 @@ function Plan({
   button,
   features,
   featured = false,
-  activePeriod,
   logomarkClassName,
+  activePeriod,
 }) {
   return (
     <section
@@ -119,32 +119,7 @@ function Plan({
           featured ? 'text-white' : 'text-gray-900'
         )}
       >
-        {price.Monthly === price.Annually ? (
-          price.Monthly
-        ) : (
-          <>
-            <span
-              aria-hidden={activePeriod === 'Annually'}
-              className={clsx(
-                'transition duration-300',
-                activePeriod === 'Annually' &&
-                  'pointer-events-none translate-x-6 select-none opacity-0'
-              )}
-            >
-              {price.Monthly}
-            </span>
-            <span
-              aria-hidden={activePeriod === 'Monthly'}
-              className={clsx(
-                'absolute left-0 top-0 transition duration-300',
-                activePeriod === 'Monthly' &&
-                  'pointer-events-none -translate-x-6 select-none opacity-0'
-              )}
-            >
-              {price.Annually}
-            </span>
-          </>
-        )}
+        {price[activePeriod]}
       </p>
       <p
         className={clsx(
@@ -181,7 +156,7 @@ function Plan({
         href={button.href}
         color={featured ? 'cyan' : 'gray'}
         className="mt-6"
-        aria-label={`Get started with the ${name} plan for ${price}`}
+        aria-label={`Get started with the ${name} plan for ${price[activePeriod]}`}
       >
         {button.label}
       </Button>

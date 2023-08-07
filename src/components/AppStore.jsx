@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 
-export function AppStoreLink({ color = 'black' }) {
+export function AppStore({ color = 'black' }) {
   return (
     <Link
       href="#"

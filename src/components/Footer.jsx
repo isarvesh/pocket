@@ -28,12 +28,7 @@ export function Footer() {
               <img
                 width="90"
                 height="38"
-                alt="Measured® | Marketing Attribution | Incrementality Testing"
                 src="https://cdn-fccog.nitrocdn.com/dYpGiMcFJGJjtrIWsQrGqFSIVpbzqukK/assets/images/optimized/rev-0bf76a7/www.measured.com/logos/measured-sm.png"
-                className="lazyloaded"
-                decoding="async"
-                nitro-lazy-empty=""
-                id="Njo0Mzg1NQ==-1"
               />
               <div className="ml-4">
                 <p className="text-base font-semibold">Measured</p>
